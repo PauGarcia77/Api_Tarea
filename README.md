@@ -1,6 +1,6 @@
 # Activitat Git
 
-El projecte és una primera aproximació amb les API RestFul
+El projecte és una primera aproximació a les API RestFul
 
 ## Instal·lació
 
