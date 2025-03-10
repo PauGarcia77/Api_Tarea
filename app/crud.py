@@ -11,6 +11,7 @@ def get_tasks(db: Session):
         List all tasks
     """
     # TODO: El vostre codi va aqui
+    return db.query(Task).all()
     pass
 
 
@@ -22,6 +23,10 @@ def create_tasks(db: Session, task: TaskCreate):
         Return the new task
     """
     # TODO: El vostre codi va aqui
+    db_task = Task(title=task.title, description=task.description)
+    db.add(db_task)
+    db.commit()
+    db.refresh(db_task)
     pass
 
 
