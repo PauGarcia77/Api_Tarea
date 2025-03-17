@@ -11,7 +11,8 @@ def get_tasks(db: Session):
         List all tasks
     """
     # TODO: El vostre codi va aqui
-    pass
+    return db.query(Task).all()
+ 
 
 
 def create_tasks(db: Session, task: TaskCreate):
@@ -22,7 +23,13 @@ def create_tasks(db: Session, task: TaskCreate):
         Return the new task
     """
     # TODO: El vostre codi va aqui
-    pass
+    ###import ipdb; ipdb.set_trace()
+    db_task = Task(title=task.title, description=task.description)
+    db.add(db_task)
+    db.commit()
+    db.refresh(db_task)
+    return db_task  # 🔹 Ahora devuelve la tarea creada
+  
 
 
 def update_tasks(db: Session, task_id: int, task_update: TaskUpdate):
