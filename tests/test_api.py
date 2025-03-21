@@ -119,7 +119,7 @@ class TestGetCreateFunctions(unittest.TestCase):
         # Nota: Esto depende de cómo se inicializa Task, pero asumimos que sigue el modelo
         # donde completed tiene un valor por defecto de False
         self.assertFalse(hasattr(added_task, 'completed') or added_task.completed is None, 
-                         "El campo 'completed' debería ser None o no existir en este punto, ya que se establece por defecto en la base de datos")
+                         "El campo 'completed' debería ser None o no existir en este punto, ya que se establece por defecto en la base de datoss")
 
 
 if __name__ == "__main__":
