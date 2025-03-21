@@ -12,7 +12,6 @@ def get_tasks(db: Session):
     """
     # TODO: El vostre codi va aqui
     return db.query(Task).all()
- 
 
 
 def create_tasks(db: Session, task: TaskCreate):
@@ -29,7 +28,6 @@ def create_tasks(db: Session, task: TaskCreate):
     db.commit()
     db.refresh(db_task)
     return db_task  # 🔹 Ahora devuelve la tarea creada
-  
 
 
 def update_tasks(db: Session, task_id: int, task_update: TaskUpdate):
@@ -45,6 +43,7 @@ def update_tasks(db: Session, task_id: int, task_update: TaskUpdate):
     db.commit()
     db.refresh(db_task)
     return db_task  # 🔹 Devuelve la tarea actualizada
+
 
 def delete_tasks(db: Session, task_id: int):
     db_task = db.query(Task).filter(Task.id == task_id).first()
