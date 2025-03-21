@@ -22,7 +22,7 @@ def create_tasks(db: Session, task: TaskCreate):
         Return the new task
     """
     # TODO: El vostre codi va aqui
-    ###import ipdb; ipdb.set_trace()
+    # import ipdb; ipdb.set_trace()
     db_task = Task(title=task.title, description=task.description)
     db.add(db_task)
     db.commit()
