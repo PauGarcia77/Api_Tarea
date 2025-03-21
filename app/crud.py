@@ -33,6 +33,8 @@ def create_tasks(db: Session, task: TaskCreate):
 
 
 def update_tasks(db: Session, task_id: int, task_update: TaskUpdate):
+    # import ipdb; ipdb.set_trace()
+
     db_task = db.query(Task).filter(Task.id == task_id).first()
     if not db_task:
         return None  # Opcional: podrías lanzar un HTTPException aquí

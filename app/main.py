@@ -27,10 +27,10 @@ def modify_task(task_id: int,
     updated_tasks = update_tasks(db, task_id, task_update)
     if not updated_tasks:
         raise HTTPException(status_code=404, detail="Tasca no trobada")
-    return update_tasks
+    return updated_tasks
 
 
-@app.delete("tasks/{task_id}")
+@app.delete("/tasks/{task_id}")
 def remove_task(task_id: int, db: Session = Depends(get_db)):
     deleted_task = delete_tasks(db, task_id)
     if not deleted_task:
